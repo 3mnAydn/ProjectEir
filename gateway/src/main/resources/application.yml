@@ -21,7 +21,7 @@ spring:
           predicates:
             - Path=/api/patients/**
 
-        # 3. APPOINTMENT SERVICE ROUTE (Laravel Microservice via gRPC/REST)
+        # 3. APPOINTMENT SERVICE ROUTE (Spring Boot)
         - id: appointment-service
           uri: lb://APPOINTMENT-SERVICE
           predicates:
