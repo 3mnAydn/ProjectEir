@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/gateway/src/main/java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:6.1.6" level="project" />
+    <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt-api:0.12.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:6.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:6.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:6.1.6" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.6.5" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-gateway-server:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:3.2.5" level="project" />
+  </component>
+</module>
