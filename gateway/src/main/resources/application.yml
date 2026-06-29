@@ -56,3 +56,19 @@ eureka:
 # Custom Application Properties (To be evaluated by JwtAuthenticationFilter)
 jwt:
   secret: "EirProjectSuperSecretKeyForJwtTokensMustBeVeryLongAndSecure2026!"
+
+# Security path configuration
+security:
+  paths:
+    public-paths:
+      - /api/auth/login
+      - /api/auth/register
+      - /api/auth/refresh
+      - /actuator/health
+      - /actuator/info
+    private-paths:
+      - /api/auth/**
+      - /api/patients/**
+      - /api/appointments/**
+      - /api/billing/**
+      - /api/triage/**

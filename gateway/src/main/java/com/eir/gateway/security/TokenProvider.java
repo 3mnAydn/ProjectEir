@@ -24,7 +24,7 @@ public class TokenProvider
 
     public boolean validateToken(String token) {
         try {
-            Jwts.parser().setSigningKey(getSigningKey()).parseClaimsJws(token);
+            Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token);
             return true;
         } catch (Exception e) {
             return false;
@@ -33,12 +33,12 @@ public class TokenProvider
 
     public String getUserIdFromToken(String token)
     {
-        return Jwts.parser().setSigningKey(getSigningKey()).parseClaimsJws(token).getBody().getSubject();
+        return Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token).getBody().getSubject();
     }
 
     public List<String> getRolesFromToken(String token)
     {
-        return Jwts.parser().setSigningKey(getSigningKey()).parseClaimsJws(token).getBody().get("roles",List.class);
+        return Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token).getBody().get("roles",List.class);
     }
 
 }
