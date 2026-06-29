@@ -33,7 +33,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain)
     {
 
-        GatewaySecurityContext context = new GatewaySecurityContext();
+        GatewaySecurityContext context = (GatewaySecurityContext) exchange.getAttributes().get("securityContext");
         AuthHandler.HandlerChain chain3 = (ex, ch, ctx) ->
                 headerInjectHandler.handle(ex, ch, null, ctx);
         AuthHandler.HandlerChain chain2 = (ex, ch, ctx) ->
