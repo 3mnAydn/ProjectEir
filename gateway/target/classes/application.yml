@@ -1,0 +1,74 @@
+server:
+  port: 8080 # The gateway exposes this port to the public/client applications
+
+spring:
+  application:
+    name: eir-gateway # Application name registered within the Eureka Service Registry
+
+  cloud:
+    gateway:
+      routes:
+        # 1. AUTH SERVICE ROUTE (Spring Boot)
+        - id: auth-service
+          uri: lb://AUTH-SERVICE # Routes requests via Load Balancer using Eureka service discovery
+          predicates:
+            - Path=/api/auth/** # Forwards any request starting with /api/auth to Auth Service
+            - Method=POST
+
+        # 2. PATIENT SERVICE ROUTE (Spring Boot)
+        - id: patient-service
+          uri: lb://PATIENT-SERVICE
+          predicates:
+            - Path=/api/patients/**
+
+        # 3. APPOINTMENT SERVICE ROUTE (Spring Boot)
+        - id: appointment-service
+          uri: lb://APPOINTMENT-SERVICE
+          predicates:
+            - Path=/api/appointments/**
+
+        # 4. BILLING SERVICE ROUTE (Laravel Microservice)
+        - id: billing-service
+          uri: lb://BILLING-SERVICE
+          predicates:
+            - Path=/api/billing/** # Forwards invoicing and payment requests to Billing Service
+            - Method=POST
+
+        # 5. AI TRIAGE SERVICE ROUTE (Python FastAPI)
+        - id: ai-triage-service
+          uri: lb://AI-TRIAGE-SERVICE
+          predicates:
+            - Path=/api/triage/** # Forwards NLP-based symptom text requests to Python AI Service
+
+  data:
+    redis:
+      host: localhost
+      port: 6379 # Used for Redis-based Rate Limiting (RateLimitFilter)
+
+# Service Discovery Client Configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+# Custom Application Properties (To be evaluated by JwtAuthenticationFilter)
+jwt:
+  secret: "Zm91Z2h0dGFpbHBsZWFzZWhlYXJ0aGVhcnRmYWxsZW5yb3VuZHN1cHBseWJlbG9uZ3M="
+
+# Security path configuration
+security:
+  paths:
+    public-paths:
+      - /api/auth/login
+      - /api/auth/register
+      - /api/auth/refresh
+      - /actuator/health
+      - /actuator/info
+    private-paths:
+      - /api/auth/**
+      - /api/patients/**
+      - /api/appointments/**
+      - /api/billing/**
+      - /api/triage/**

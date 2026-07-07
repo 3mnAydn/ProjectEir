@@ -1,0 +1,7 @@
+com/eir/auth/entity/Role.class
+com/eir/auth/AuthApplication.class
+com/eir/auth/entity/User.class
+com/eir/auth/repository/RoleRepository.class
+com/eir/auth/entity/Permission.class
+com/eir/auth/repository/UserRepository.class
+com/eir/auth/config/SecurityConfig.class

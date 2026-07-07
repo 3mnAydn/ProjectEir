@@ -1,0 +1,9 @@
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/filter/JwtAuthenticationFilterTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/GatewayComponentTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/filter/handler/HeaderInjectHandlerTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/filter/RateLimitFilterTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/filter/handler/TokenExtractHandlerTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/filter/handler/TokenValidateHandlerTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/ContextInitTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/filter/handler/PermitAllHandlerTest.java
+/home/daisy/IdeaProjects/ProjectEir/Eir/ProjectEir/gateway/src/test/java/com/eir/gateway/config/SecurityPropertiesTest.java
