@@ -35,7 +35,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
 
         GatewaySecurityContext context = (GatewaySecurityContext) exchange.getAttributes().get("securityContext");
         AuthHandler.HandlerChain chain3 = (ex, ch, ctx) ->
-                headerInjectHandler.handle(ex, ch, null, ctx);
+                headerInjectHandler.handle(ex, ch, (e, c, c2) -> c.filter(e), ctx);
         AuthHandler.HandlerChain chain2 = (ex, ch, ctx) ->
                 tokenValidateHandler.handle(ex, ch, chain3, ctx);
         AuthHandler.HandlerChain chain1 = (ex, ch, ctx) ->

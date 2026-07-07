@@ -55,7 +55,7 @@ eureka:
 
 # Custom Application Properties (To be evaluated by JwtAuthenticationFilter)
 jwt:
-  secret: "EirProjectSuperSecretKeyForJwtTokensMustBeVeryLongAndSecure2026!"
+  secret: "Zm91Z2h0dGFpbHBsZWFzZWhlYXJ0aGVhcnRmYWxsZW5yb3VuZHN1cHBseWJlbG9uZ3M="
 
 # Security path configuration
 security:
