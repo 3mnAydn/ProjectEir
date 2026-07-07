@@ -1,7 +1,7 @@
 package com.eir.gateway.filter.handler;
 
 import com.eir.gateway.GatewaySecurityContext;
-import com.eir.gateway.security.TokenProvider;
+import com.eir.common.jwt.JwtProvider;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -11,14 +11,14 @@ import reactor.core.publisher.Mono;
 @Component
 public class TokenValidateHandler implements AuthHandler {
 
-    TokenProvider tokenProvider;
-    public TokenValidateHandler(TokenProvider tokenProvider) {
-        this.tokenProvider = tokenProvider;
+    JwtProvider jwtProvider;
+    public TokenValidateHandler(JwtProvider jwtProvider) {
+        this.jwtProvider = jwtProvider;
     }
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, GatewayFilterChain chain, HandlerChain next,GatewaySecurityContext context)
     {
-        boolean tokenIsValid = tokenProvider.validateToken(context.getToken());
+        boolean tokenIsValid = jwtProvider.validateToken(context.getToken());
         if(tokenIsValid)
         {
             return next.next(exchange, chain, context);
