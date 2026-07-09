@@ -55,7 +55,7 @@ eureka:
 
 # Custom Application Properties (To be evaluated by JwtAuthenticationFilter)
 jwt:
-  secret: "Zm91Z2h0dGFpbHBsZWFzZWhlYXJ0aGVhcnRmYWxsZW5yb3VuZHN1cHBseWJlbG9uZ3M="
+  secret: "RWlyUHJvamVjdFN1cGVyU2VjcmV0S2V5Rm9ySnd0VG9rZW5zMjAyNiEhIQ=="
 
 # Security path configuration
 security:
