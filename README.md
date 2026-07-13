@@ -24,6 +24,7 @@ Project Eir utilizes a polyglot microservices approach, choosing the best tool f
 | **Frontend** | Angular | SPA for hospital staff and patient portals. |
 | **API Gateway** | Spring WebFlux | Reactive gateway handling routing, rate limiting, and JWT validation. |
 | **Core Services** | Spring Boot | Handles complex business logic (e.g., Appointments, Users). |
+| **Auth Service** | Spring Boot | **Authentication & Authorization** – Strategy Pattern (EmailPasswordStrategy) + Factory Pattern (Strategy/Token factories) + Pipeline/Builder Pattern (ValidateInput → StrategySelection → Authenticate → AccountStatus → TokenGeneration). 140 tests (71 unit + 54 integration + 15 DTO). |
 | **Financial Services** | Laravel | Manages billing, invoicing, and payment strategies. |
 | **Analytics/AI** | Python | Reserved for data processing and potential predictive modules. |
 | **Async Comm.** | RabbitMQ | Event broker for decoupled inter-service communication. |

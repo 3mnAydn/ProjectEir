@@ -32,7 +32,7 @@ public class JwtTokenFactory implements TokenFactory {
 
     @Override
     public TokenPair createTokenPair(User user, Set<String> roles) {
-        return new TokenPair(
+        return new TokenPair(3
             createAccessToken(user, roles),
             createRefreshToken(user)
         );

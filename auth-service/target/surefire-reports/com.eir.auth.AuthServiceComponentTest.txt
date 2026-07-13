@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.eir.auth.AuthServiceComponentTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.33 s -- in com.eir.auth.AuthServiceComponentTest

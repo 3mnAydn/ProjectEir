@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: auth-service-test
+  datasource:
+    url: jdbc:h2:mem:eir_auth;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/test
+    baseline-on-migrate: true
+
+eureka:
+  client:
+    enabled: false
+
+jwt:
+  secret: "dGVzdC1zZWNyZXQta2V5LXRoYXQtaXMtbG9uZy1lbm91Z2gtZm9yLXRlc3Rpbmc="
+  access-token-expiration: 900000
+  refresh-token-expiration: 2592000000
+
+logging:
+  level:
+    com.eir.auth: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG

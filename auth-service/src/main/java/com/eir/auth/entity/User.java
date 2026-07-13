@@ -26,6 +26,9 @@ public class User
 
     private String phone;
 
+    @Column(name = "identity_number", nullable = false, unique = true)
+    private String identityNumber;
+
     @Column(nullable = false)
     private boolean enabled = true;
 
@@ -65,8 +68,12 @@ public class User
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
-    public String getPhone() { return phone; }
+public String getPhone() { return phone; }
     public void setPhone(String phone) { this.phone = phone; }
+
+    public String getIdentityNumber() { return identityNumber; }
+    public void setIdentityNumber(String identityNumber) { this.identityNumber = identityNumber; }
+
     public boolean isEnabled() { return enabled; }
     public void setEnabled(boolean enabled) { this.enabled = enabled; }
     public LocalDateTime getCreatedAt() { return createdAt; }
