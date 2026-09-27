@@ -1,3 +1,4 @@
+🚧 Design/Planning Phase
 # 🏥 Project Eir: Microservices-Based Hospital ERP System
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
