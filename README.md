@@ -22,7 +22,7 @@ Project Eir utilizes a polyglot microservices approach, choosing the best tool f
 
 | Layer | Technology | Description |
 | :--- | :--- | :--- |
-| **Frontend** | Angular | SPA for hospital staff and patient portals. |
+| **Frontend** | Next.js (React) | SSR/CSR hybrid SPA for hospital staff and patient portals. |
 | **API Gateway** | Spring WebFlux | Reactive gateway handling routing, rate limiting, and JWT validation. |
 | **Core Services** | Spring Boot | Handles complex business logic (e.g., Appointments, Users). |
 | **Auth Service** | Spring Boot | **Authentication & Authorization** – Strategy Pattern (EmailPasswordStrategy) + Factory Pattern (Strategy/Token factories) + Pipeline/Builder Pattern (ValidateInput → StrategySelection → Authenticate → AccountStatus → TokenGeneration). 140 tests (71 unit + 54 integration + 15 DTO). |
@@ -49,5 +49,6 @@ project-eir/
 ├── eir-appointment-service/ # Spring Boot - Appointment & State Logic
 ├── eir-billing-service/     # Laravel - Invoicing & Payment Strategies
 ├── eir-patient-service/     # Patient Records & History
-├── eir-frontend/            # Angular User Interface
+├── eir-frontend/            # Next.js (React) User Interface
 └── docs/                    # UML Diagrams, SRS, and Architecture Notes
+```
